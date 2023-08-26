@@ -1,0 +1,22 @@
+{
+  "name": "create-rino",
+  "version": "0.0.1",
+  "description": "The recommended way to start your rino project",
+  "bin": "./bin/cli.js",
+  "scripts": {
+    "rino": "node bin/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rinojs/create-rino.git"
+  },
+  "author": "Victor Chanil Park",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rinojs/create-rino/issues"
+  },
+  "homepage": "https://github.com/rinojs/create-rino#readme",
+  "dependencies": {
+    "@inquirer/prompts": "^3.0.3"
+  }
+}
