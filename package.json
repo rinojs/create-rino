@@ -1,8 +1,10 @@
 {
   "name": "create-rino",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The recommended way to start your rino project",
-  "bin": "./bin/cli.js",
+  "bin": {
+    "create-rino" : "./bin/cli.js"
+  },
   "scripts": {
     "rino": "node bin/cli.js"
   },

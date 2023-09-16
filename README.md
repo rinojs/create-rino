@@ -3,5 +3,5 @@
 ▶ The recommended way to start your rino project
 
 ```
-npm create rino
+npm create rino@latest
 ```

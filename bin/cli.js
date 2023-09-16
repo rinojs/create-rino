@@ -78,7 +78,7 @@ async function main()
         
 
 Github: https://github.com/rinojs/rinojs
-documentation: https://rinojs.org/documents/introduction.html
+Documentation: https://rinojs.org/documents/introduction.html
 Become a sponsor & support us!: https://rinojs.org/sponsor.html
 Shop: https://rinojs.org/shop.html
 
