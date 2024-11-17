@@ -1,10 +1,11 @@
 {
   "name": "create-rino",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The recommended way to start your rino project",
   "bin": {
-    "create-rino" : "./bin/cli.js"
+    "create-rino": "bin/cli.js"
   },
+  "type": "module",
   "scripts": {
     "rino": "node bin/cli.js"
   },
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/rinojs/create-rino#readme",
   "dependencies": {
-    "@inquirer/prompts": "^3.0.3"
+    "@inquirer/prompts": "^7.1.0",
+    "chalk": "^5.3.0"
   }
 }

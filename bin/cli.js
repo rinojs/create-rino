@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const { execSync } = require('child_process');
-const { input } = require('@inquirer/prompts');
-const fs = require('fs');
+import { execSync } from 'child_process';
+import { input } from '@inquirer/prompts';
+import fs from 'fs';
 
 async function runCommand(command)
 {
@@ -23,31 +23,14 @@ async function main()
 {
     try
     {
-        console.log(`
-
-
-    .::::::::::::::::::::----.
-    =*********************###:
-    =*********************###:
-    =********======+******###:
-    =******##      =******###:
-    =******##      =******###:
-    =******##      =******###:
-    =******##......=******###:
-    =*********************###+==
-    =***********************###*
-    =********+++++++++******###*
-    =******##        .******###*
-    =******##        .******###*
-    =******##        .******###*
-    =******##        .******###*
-    =******##        .******###*
-    -+++++*##         ++++++###*
-
-    Rino.js!
-
-    Fast learning, preprocessing, intuitive web framework
-
+        console.log(`${ chalk.redBright.bgBlack(`
+██████╗ ██╗███╗   ██╗ ██████╗         ██╗███████╗
+██╔══██╗██║████╗  ██║██╔═══██╗        ██║██╔════╝
+██████╔╝██║██╔██╗ ██║██║   ██║        ██║███████╗
+██╔══██╗██║██║╚██╗██║██║   ██║   ██   ██║╚════██║
+██║  ██║██║██║ ╚████║╚██████╔╝██╗╚█████╔╝███████║
+╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝ ╚════╝ ╚══════╝
+`) }
         `);
 
         const projectName = await input({ message: 'Please enter name of project (directory):' });
@@ -76,11 +59,10 @@ async function main()
         console.log(`Setting up is successful`);
         console.log(`
         
-
+${ chalk.white.bold('Become a sponsor & support Rino.js!') }
+${ chalk.white('https://ko-fi.com/opdev1004') }
+${ chalk.white('https://github.com/sponsors/opdev1004') }
 Github: https://github.com/rinojs/rinojs
-Documentation: https://rinojs.org/documents/introduction.html
-Become a sponsor & support us!: https://rinojs.org/sponsor.html
-Shop: https://rinojs.org/shop.html
 
 Start your development:
 cd ${ projectName } && npm run dev
