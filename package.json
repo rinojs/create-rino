@@ -1,6 +1,6 @@
 {
   "name": "create-rino",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The recommended way to start your rino project",
   "bin": {
     "create-rino": "bin/cli.js"
