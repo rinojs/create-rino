@@ -5,52 +5,51 @@ import { input } from '@inquirer/prompts';
 import fs from 'fs';
 import chalk from 'chalk';
 
-async function runCommand(command)
+async function runCommand (command)
 {
     try
     {
-        execSync(`${ command }`, { stdio: 'inherit' });
+        execSync(`${command}`, { stdio: 'inherit' });
     }
     catch (error)
     {
-        console.error(`Error: ${ command }\n`, error);
+        console.error(`Error: ${command}\n`, error);
         return false;
     }
 
     return true;
 }
 
-async function main()
+async function main ()
 {
     try
     {
-        console.log(`${ chalk.redBright.bgBlack(`
+        console.log(`${chalk.redBright.bgBlack(`
 ██████╗ ██╗███╗   ██╗ ██████╗         ██╗███████╗
 ██╔══██╗██║████╗  ██║██╔═══██╗        ██║██╔════╝
 ██████╔╝██║██╔██╗ ██║██║   ██║        ██║███████╗
 ██╔══██╗██║██║╚██╗██║██║   ██║   ██   ██║╚════██║
 ██║  ██║██║██║ ╚████║╚██████╔╝██╗╚█████╔╝███████║
 ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝ ╚════╝ ╚══════╝
-`) }
+`)}
 
-${ chalk.white.bold('Become a sponsor & support Rino.js!') }
-${ chalk.white('https://ko-fi.com/opdev1004') }
-${ chalk.white('https://github.com/sponsors/opdev1004') }
+${chalk.white.bold('Become a sponsor & support Rino.js!')}
+${chalk.white('https://github.com/sponsors/opdev1004')}
         `);
 
         const projectName = await input({ message: 'Please enter name of project (directory):' });
-        const gitCloneCommand = `git clone --depth 1 https://github.com/rinojs/create-rino-template.git ${ projectName }`
-        const setupCommand = `cd ${ projectName } && git remote remove origin && npm install`
-        console.log(`Cloning the repository with name: ${ projectName }`);
+        const gitCloneCommand = `git clone --depth 1 https://github.com/rinojs/create-rino-template.git ${projectName}`
+        const setupCommand = `cd ${projectName} && git remote remove origin && npm install`
+        console.log(`Cloning the repository with name: ${projectName}`);
 
         let result = await runCommand(gitCloneCommand);
 
         if (!result) process.exit(1);
 
         console.log(`Cloning is successful`);
-        console.log(`Setting up ${ projectName }`);
+        console.log(`Setting up ${projectName}`);
 
-        const packageJsonPath = `./${ projectName }/package.json`;
+        const packageJsonPath = `./${projectName}/package.json`;
         const packageJsonContent = fs.readFileSync(packageJsonPath, 'utf8');
         const packageJson = JSON.parse(packageJsonContent);
         packageJson.name = projectName;
@@ -66,7 +65,7 @@ ${ chalk.white('https://github.com/sponsors/opdev1004') }
 Github: https://github.com/rinojs/rinojs
 
 Start your development:
-cd ${ projectName } && npm run dev
+cd ${projectName} && npm run dev
 
         `);
     }
